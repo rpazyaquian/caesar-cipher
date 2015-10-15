@@ -3,17 +3,18 @@ require_relative "../caesar.rb"
 
 describe "#encrypt" do
   describe "basic encryption" do
+    let(:plain_alphabet) { %w(abcdefghijklmnopqrstuvwxyz) }
     let(:string) { "the quick brown fox jumped over the lazy dog" }
     let(:rotation) { 3 }
     let(:encrypted_string) { "wkh txlfn eurzq ira mxpshg ryhu wkh odcb grj" }
     let(:rot13_string) { "gur dhvpx oebja sbk whzcrq bire gur ynml qbt" }
 
     it "encrypts a string" do
-      expect(encrypt(string, rotation)).to eq encrypted_string
+      expect(encrypt(string, plain_alphabet, rotation)).to eq encrypted_string
     end
 
     it "defaults to rot13" do
-      expect(encrypt(string)).to eq rot13_string
+      expect(encrypt(string, plain_alphabet)).to eq rot13_string
     end
 
     context "with mixed case" do
@@ -43,9 +44,9 @@ describe "#encrypt" do
       let(:encrypted_string_negative) { "sgd pthbj aqnvm enw itlodc nudq sgd kzyx cnf" }
 
       it "accepts a rotation vector" do
-        expect(encrypt(string, short_rotation)).to eq encrypted_string_short
-        expect(encrypt(string, long_rotation)).to eq encrypted_string_long
-        expect(encrypt(string, negative_rotation)).to eq encrypted_string_negative
+        expect(encrypt(string, plain_alphabet, short_rotation)).to eq encrypted_string_short
+        expect(encrypt(string, plain_alphabet, long_rotation)).to eq encrypted_string_long
+        expect(encrypt(string, plain_alphabet, negative_rotation)).to eq encrypted_string_negative
       end
     end
   end
