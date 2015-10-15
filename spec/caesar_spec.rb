@@ -42,11 +42,14 @@ describe "#encrypt" do
       let(:encrypted_string_long) { "gur dhvpx oebja sbk whzcrq bire gur ynml qbt" }
       let(:negative_rotation) { -1 }
       let(:encrypted_string_negative) { "sgd pthbj aqnvm enw itlodc nudq sgd kzyx cnf" }
+      let(:ridiculous_rotation) { (26 * 5) }
+      let(:encrypted_string_ridiculous) { "the quick brown fox jumped over the lazy dog" }
 
       it "accepts a rotation vector" do
         expect(encrypt(string, plain_alphabet, short_rotation)).to eq encrypted_string_short
         expect(encrypt(string, plain_alphabet, long_rotation)).to eq encrypted_string_long
         expect(encrypt(string, plain_alphabet, negative_rotation)).to eq encrypted_string_negative
+        expect(encrypt(string, plain_alphabet, ridiculous_rotation)).to eq encrypted_string_ridiculous
       end
     end
   end
