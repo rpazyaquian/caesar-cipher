@@ -7,10 +7,10 @@ def rotate_alphabet(alphabet, rotation)
 end
 
 def encrypt(string, alphabet, rotation = 13)
-  cipher = rotate_alphabet(plain_alphabet, rotation)
-  translation_map = Hash[plain_alphabet.zip(cipher)]
+  cipher = rotate_alphabet(alphabet, rotation)
+  translation_map = Hash[alphabet.zip(cipher)]
   encrypted_string = string.split("").map do |char|
-    if plain_alphabet.include?(char.downcase)
+    if alphabet.include?(char.downcase)
       translated_char = translation_map[char.downcase]
       translated_char = is_capitalized?(char) ? translated_char.upcase : translated_char
     else

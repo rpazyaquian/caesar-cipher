@@ -9,6 +9,10 @@ Cipher:   XYZABCDEFGHIJKLMNOPQRSTUVW
 
 This project is an implementation of a Caesar cipher written in Ruby.
 
+# Usage
+
+`ruby main.rb "the quick brown fox jumped over the lazy dog" 13`
+
 # Program Flow
 
 The program takes two inputs: the string to be translated, and the rotations to perform. Positive integers rotate to the right ("abcdefg" -> "bcdefga"), and negative integers rotate to the left ("abcdefg" -> "gabcdef"). By default, the program performs a standard ROT13 cipher.
