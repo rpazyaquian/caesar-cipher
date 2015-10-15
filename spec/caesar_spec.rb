@@ -3,7 +3,7 @@ require_relative "../caesar.rb"
 
 describe "#encrypt" do
   describe "basic encryption" do
-    let(:plain_alphabet) { %w(a b c d e f g h i j k l m n o p q r s t u v w x y z) }
+    let(:plain_alphabet) { ("a".."z").to_a }
     let(:string) { "the quick brown fox jumped over the lazy dog" }
     let(:rotation) { 3 }
     let(:encrypted_string) { "wkh txlfn eurzq ira mxpshg ryhu wkh odcb grj" }
