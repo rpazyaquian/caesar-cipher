@@ -3,7 +3,7 @@ require_relative "../caesar.rb"
 
 describe "#encrypt" do
   describe "basic encryption" do
-    let(:plain_alphabet) { %w(abcdefghijklmnopqrstuvwxyz) }
+    let(:plain_alphabet) { %w(a b c d e f g h i j k l m n o p q r s t u v w x y z) }
     let(:string) { "the quick brown fox jumped over the lazy dog" }
     let(:rotation) { 3 }
     let(:encrypted_string) { "wkh txlfn eurzq ira mxpshg ryhu wkh odcb grj" }
@@ -22,7 +22,7 @@ describe "#encrypt" do
       let(:encrypted_mixed_case_string) { "Wkh Txlfn Eurzq Ira mxpshg ryhu wkh Odcb Grj" }
 
       it "preserves case" do
-        expect(encrypt(mixed_case_string, rotation)).to eq encrypted_mixed_case_string
+        expect(encrypt(mixed_case_string, plain_alphabet, rotation)).to eq encrypted_mixed_case_string
       end
     end
 
@@ -31,7 +31,7 @@ describe "#encrypt" do
       let(:encrypted_string_with_punctuation) { "...wkh txlfn eurzq ira - mxpshg ryhu wkh odcb grj!" }
 
       it "preserves punctuation" do
-        expect(encrypt(string_with_punctuation, rotation)).to eq encrypted_string_with_punctuation
+        expect(encrypt(string_with_punctuation, plain_alphabet, rotation)).to eq encrypted_string_with_punctuation
       end
     end
 
