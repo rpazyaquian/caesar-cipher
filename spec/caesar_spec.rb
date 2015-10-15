@@ -6,6 +6,6 @@ describe "#encrypt" do
   let(:encrypted_string) { "qeb nrfzh yoltk clu grjmp lsbo qeb ixwv ald" }
 
   it "encrypts a string" do
-    
+    expect(encrypt(string)).to eq encrypted_string
   end
 end
