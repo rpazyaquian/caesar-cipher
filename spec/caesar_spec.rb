@@ -6,10 +6,14 @@ describe "#encrypt" do
     let(:string) { "the quick brown fox jumped over the lazy dog" }
     let(:rotation) { 3 }
     let(:encrypted_string) { "wkh txlfn eurzq ira mxpshg ryhu wkh odcb grj" }
-
+    let(:rot13_string) { "gur dhvpx oebja sbk whzcrq bire gur ynml qbt" }
 
     it "encrypts a string" do
       expect(encrypt(string, rotation)).to eq encrypted_string
+    end
+
+    it "defaults to rot13" do
+      expect(encrypt(string)).to eq rot13_string
     end
 
     context "with mixed case" do
@@ -44,6 +48,5 @@ describe "#encrypt" do
         expect(encrypt(string, negative_rotation)).to eq encrypted_string_negative
       end
     end
-
   end
 end
