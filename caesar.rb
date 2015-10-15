@@ -1,2 +1,2 @@
-def encrypt
+def encrypt(string, rotation)
 end
