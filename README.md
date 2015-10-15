@@ -1,6 +1,6 @@
 # Caesar Cipher
 
-The Caesar cipher is a rudimentary encryption method based on mapping a letter of the alphabet to the matching letter of an identical alphabet "rotated" by some number of positions. For example, if a Caesar cipher is specified to be rotated right three times, the translation would look like this:
+The Caesar cipher is a rudimentary encryption method based on mapping a letter of the alphabet to the matching letter of an identical alphabet "rotated" by some number of positions. For example, if a Caesar cipher is specified to be rotated left three times, the translation would look like this:
 
 ```
 Plain:    ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -11,7 +11,7 @@ This project is an implementation of a Caesar cipher written in Ruby.
 
 # Program Flow
 
-The program takes two inputs: the string to be translated, and the rotations to perform. It also takes an optional direction parameter, specifying whether to rotate the alphabet left or right by the given rotation. By default, the program rotates the alphabet to the right.
+The program takes two inputs: the string to be translated, and the rotations to perform. Positive integers rotate to the right ("abcdefg" -> "bcdefga"), and negative integers rotate to the left ("abcdefg" -> "gabcdef"). By default, the program performs a standard ROT13 cipher.
 
 First, the program calculates a rotated version of the alphabet given the rotation vector (direction and magnitude).
 
